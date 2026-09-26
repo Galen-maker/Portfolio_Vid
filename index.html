@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Editor Portfolio</title>
+    <title>Ga Len | Video Editor Portfolio</title>
     <style>
         :root {
             --bg-color: #0f0f11;
@@ -41,11 +41,13 @@
         }
 
         h2 {
-            font-size: 1.75rem;
+            font-size: 1.5rem;
             border-bottom: 1px solid #2d2d34;
             padding-bottom: 0.5rem;
-            margin-top: 3rem;
+            margin-top: 3.5rem;
             margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
 
         /* Widescreen Layout Section (16:9) */
@@ -59,7 +61,7 @@
             .widescreen-grid { grid-template-columns: 1fr; }
         }
 
-        /* Vertical Layout Section (9:16 TikTok / Reels) */
+        /* Vertical Layout Sections (9:16) */
         .vertical-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -73,36 +75,71 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
             display: flex;
             flex-direction: column;
+            transition: transform 0.2s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-4px);
         }
 
-        /* Responsive 16:9 Aspect Ratio Container */
+        /* Responsive Widescreen Framework */
         .video-widescreen {
             position: relative;
             padding-bottom: 56.25%; 
             height: 0;
-            background-color: #000;
+            background-color: #050505;
         }
 
-        /* Responsive 9:16 Aspect Ratio Container */
+        /* Responsive Vertical Framework */
         .video-vertical {
             position: relative;
             padding-bottom: 177.78%; 
             height: 0;
-            background-color: #000;
+            background-color: #050505;
         }
 
-        .video-widescreen iframe, .video-vertical iframe {
+        .video-widescreen iframe, 
+        .video-vertical iframe, 
+        .video-vertical .tiktok-embed-container {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             border: 0;
+            z-index: 2;
+        }
+
+        /* Layout Rules for Native TikTok Widget Scroll Scaffolding */
+        .tiktok-embed-container {
+            overflow-y: auto;
+            background: #000;
+        }
+        .tiktok-embed-container blockquote {
+            margin: 0 !important;
+            padding: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+        }
+
+        /* Cover Thumbnail Overlay Rule */
+        .video-cover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            z-index: 1;
         }
 
         .project-info {
             padding: 1.25rem;
             flex-grow: 1;
+            z-index: 3;
+            background-color: var(--card-bg);
+            border-top: 1px solid #2d2d34;
         }
 
         .project-title { font-size: 1.15rem; margin: 0 0 0.5rem 0; font-weight: 600; }
@@ -113,57 +150,80 @@
 <body>
 
     <header>
-        <h1>Your Name</h1>
-        <p class="subtitle">Professional Video Editor & Content Creator</p>
+        <h1>Ga Len</h1>
+        <p class="subtitle">Professional Video Editor & Short-Form Content Creator</p>
         <div class="contact-links">
-            <a href="mailto:youremail@example.com">Email Me</a>
+            <a href="mailto:galenfroggy@example.com">Email Me</a>
             <a href="https://linkedin.com" target="_blank">LinkedIn</a>
         </div>
     </header>
 
     <main>
         
-        <!-- SECTION 1: WIDESCREEN VIDEOS -->
-        <h2>YouTube & Widescreen Projects</h2>
+        <!-- SECTION 1: WIDESCREEN CINEMATIC / COMMERCIALS -->
+        <h2>Widescreen Video Production (16:9)</h2>
         <div class="widescreen-grid">
-            
             <div class="project-card">
                 <div class="video-widescreen">
-                    <iframe src="https://www.youtube.com/embed/Vui8NR0cruQ?si=NQH7u3pREK1GIqje" allowfullscreen></iframe>
+                    <div class="video-cover" style="background-image: url('https://unsplash.com');"></div>
+                    <!-- Your Raw YouTube Embed Integration -->
+                    <iframe src="https://www.youtube.com/embed/762eLDKt-kg?si=Nnifc6vHt4ohryrj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
                 <div class="project-info">
-                    <h3 class="project-title">Affirmations of Clover Froggy</h3>
-                    <p class="project-desc">Description of your widescreen narrative, corporate video, or long-form commercial editing work here.</p>
+                    <h3 class="project-title">YouTube Production Reel</h3>
+                    <p class="project-desc">Long-form video editing presentation showcase. Focus on color correction, speech leveling pacing metrics, and cinematic transitions.</p>
                 </div>
             </div>
-
         </div>
 
-        <!-- SECTION 2: VERTICAL SHORT-FORM CONTENT -->
-        <h2>Shorts, Reels & TikToks</h2>
+        <!-- SECTION 2: VERTICAL CONTENT SECTIONS -->
+        <h2>Shorts, Reels & TikTok Videos (9:16)</h2>
         <div class="vertical-grid">
             
-            <!-- TIKTOK VIDEO CARD -->
+            <!-- TIKTOK CARD -->
             <div class="project-card">
                 <div class="video-vertical">
-                    <!-- TIP: Replace the numbers below with your real 19-digit TikTok video ID -->
-                    <iframe src="https://tiktok.com" allow="fullscreen"></iframe>
+                    <div class="video-cover" style="background-image: url('https://unsplash.com');"></div>
+                    <!-- Your Raw Native TikTok Script Widget Embed -->
+                    <div class="tiktok-embed-container">
+                        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@galenfroggy/video/7266388727654665478" data-video-id="7266388727654665478"> 
+                            <section> 
+                                <a target="_blank" title="@galenfroggy" href="https://www.tiktok.com/@galenfroggy?refer=embed">@galenfroggy</a> 
+                                Powerful Words to make your partner feel loved. ❤️❤️❤️ 
+                            </section> 
+                        </blockquote> 
+                        <script async src="https://www.tiktok.com/embed.js"></script>
+                    </div>
                 </div>
                 <div class="project-info">
-                    <h3 class="project-title">TikTok Trend Edit</h3>
-                    <p class="project-desc">Short-form engagement focus. Fast pacing, pop-up text animation, and trending sound design.</p>
+                    <h3 class="project-title">TikTok Growth Sequence</h3>
+                    <p class="project-desc">Short-form retention edit. Built using advanced audio cues, graphic kinetic typography text-overlays, and structural hooks designed for social timelines.</p>
                 </div>
             </div>
 
             <!-- FACEBOOK REEL CARD -->
             <div class="project-card">
                 <div class="video-vertical">
-                    <!-- Replace this source URL with your Facebook embed link -->
-                    <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F10046549318697837%2F&show_text=false&width=267&t=0" width="267" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                    <div class="video-cover" style="background-image: url('https://unsplash.com');"></div>
+                    <!-- Your Raw Facebook Iframe Embed Optimized Within Viewport Grid Layout Elements -->
+                    <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F10046549318697837%2F&show_text=false&width=267&t=0" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
                 </div>
                 <div class="project-info">
-                    <h3 class="project-title">Balanced Diet Gym Reel</h3>
-                    <p class="project-desc">Fitness promo reel optimization featuring localized captions and dynamic transitions.</p>
+                    <h3 class="project-title">Facebook Content Optimization</h3>
+                    <p class="project-desc">Vertical tracking campaign project layout. Edited to capture mobile audience retention rates utilizing trending audio sound beds and punchy transition crops.</p>
+                </div>
+            </div>
+
+            <!-- INSTAGRAM REELS / REPEAT CONTAINER FALLBACK TRACK -->
+            <div class="project-card">
+                <div class="video-vertical">
+                    <div class="video-cover" style="background-image: url('https://unsplash.com');"></div>
+                    <!-- Placeholder vertical loop frame. Once you extract your Instagram Embed link, substitute this target URL -->
+                    <iframe src="https://www.youtube.com/embed/762eLDKt-kg" title="Instagram Placement Frame" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="project-info">
+                    <h3 class="project-title">Instagram Feed Execution</h3>
+                    <p class="project-desc">Creative mobile brand pacing project. Focus on color style enhancements, split-second narrative adjustments, and custom overlay sound editing filters.</p>
                 </div>
             </div>
 
@@ -172,7 +232,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 Your Name. All rights reserved.</p>
+        <p>&copy; 2026 Ga Len. All rights reserved.</p>
     </footer>
 
 </body>
