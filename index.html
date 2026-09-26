@@ -23,9 +23,9 @@
         }
 
         header {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 4rem 2rem 2rem 2rem;
+            padding: 4rem 2rem 1rem 2rem;
             text-align: center;
         }
 
@@ -35,16 +35,35 @@
         .contact-links a:hover { text-decoration: underline; }
 
         main {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 2rem;
+            padding: 0 2rem 4rem 2rem;
         }
 
-        /* Responsive Portfolio Layout */
-        .portfolio-grid {
+        h2 {
+            font-size: 1.75rem;
+            border-bottom: 1px solid #2d2d34;
+            padding-bottom: 0.5rem;
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Widescreen Layout Section (16:9) */
+        .widescreen-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 2rem;
+        }
+
+        @media (max-width: 550px) {
+            .widescreen-grid { grid-template-columns: 1fr; }
+        }
+
+        /* Vertical Layout Section (9:16 TikTok / Reels) */
+        .vertical-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
         }
 
         .project-card {
@@ -56,18 +75,20 @@
             flex-direction: column;
         }
 
-        /* 16:9 Box for YouTube/Vimeo */
+        /* Responsive 16:9 Aspect Ratio Container */
         .video-widescreen {
             position: relative;
             padding-bottom: 56.25%; 
             height: 0;
+            background-color: #000;
         }
 
-        /* 9:16 Box for TikTok & FB Reels */
+        /* Responsive 9:16 Aspect Ratio Container */
         .video-vertical {
             position: relative;
-            padding-bottom: 177.78%; /* 9:16 Aspect Ratio */
+            padding-bottom: 177.78%; 
             height: 0;
+            background-color: #000;
         }
 
         .video-widescreen iframe, .video-vertical iframe {
@@ -80,65 +101,74 @@
         }
 
         .project-info {
-            padding: 1.5rem;
+            padding: 1.25rem;
             flex-grow: 1;
         }
 
-        .project-title { font-size: 1.25rem; margin: 0 0 0.5rem 0; font-weight: 600; }
-        .project-desc { color: var(--text-muted); font-size: 0.95rem; margin: 0; }
-        footer { text-align: center; padding: 4rem 2rem; color: var(--text-muted); font-size: 0.9rem; }
+        .project-title { font-size: 1.15rem; margin: 0 0 0.5rem 0; font-weight: 600; }
+        .project-desc { color: var(--text-muted); font-size: 0.9rem; margin: 0; }
+        footer { text-align: center; padding: 4rem 2rem; color: var(--text-muted); font-size: 0.9rem; border-top: 1px solid #2d2d34; }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Glenn Pastrana</h1>
+        <h1>Your Name</h1>
         <p class="subtitle">Professional Video Editor & Content Creator</p>
         <div class="contact-links">
-            <a href="mailto:gjaner2020@gmail.com">Email Me</a>
+            <a href="mailto:youremail@example.com">Email Me</a>
             <a href="https://linkedin.com" target="_blank">LinkedIn</a>
         </div>
     </header>
 
     <main>
-        <div class="portfolio-grid">
+        
+        <!-- SECTION 1: WIDESCREEN VIDEOS -->
+        <h2>YouTube & Widescreen Projects</h2>
+        <div class="widescreen-grid">
             
-            <!-- WIDESCREEN YOUTUBE CARD -->
             <div class="project-card">
                 <div class="video-widescreen">
                     <iframe src="https://www.youtube.com/embed/Vui8NR0cruQ?si=NQH7u3pREK1GIqje" allowfullscreen></iframe>
                 </div>
                 <div class="project-info">
-                    <h3 class="project-title">YouTube Video Project</h3>
-                    <p class="project-desc">Description of your widescreen narrative or commercial edit.</p>
-                </div>
-            </div>
-
-            <!-- VERTICAL TIKTOK CARD -->
-            <div class="project-card">
-                <div class="video-vertical">
-                    <!-- Replace with your TikTok Player URL -->
-                    <iframe src="https://www.tiktok.com/@galenfroggy/video/7266388727654665478" data-video-id="7266388727654665478" allow="fullscreen"></iframe>
-                </div>
-                <div class="project-info">
-                    <h3 class="project-title">TikTok Short-Form Edit</h3>
-                    <p class="project-desc">Description of pacing, hook creation, and graphics optimized for mobile retention.</p>
-                </div>
-            </div>
-
-            <!-- VERTICAL FACEBOOK REEL CARD -->
-            <div class="project-card">
-                <div class="video-vertical">
-                    <!-- Replace with your Facebook plugin source link -->
-                    <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F10046549318697837%2F&show_text=false&width=267&t=0" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-                </div>
-                <div class="project-info">
-                    <h3 class="project-title">Facebook Reel</h3>
-                    <p class="project-desc">Details regarding social media campaign reach, color grading, or audio design.</p>
+                    <h3 class="project-title">Affirmations of Clover Froggy</h3>
+                    <p class="project-desc">Description of your widescreen narrative, corporate video, or long-form commercial editing work here.</p>
                 </div>
             </div>
 
         </div>
+
+        <!-- SECTION 2: VERTICAL SHORT-FORM CONTENT -->
+        <h2>Shorts, Reels & TikToks</h2>
+        <div class="vertical-grid">
+            
+            <!-- TIKTOK VIDEO CARD -->
+            <div class="project-card">
+                <div class="video-vertical">
+                    <!-- TIP: Replace the numbers below with your real 19-digit TikTok video ID -->
+                    <iframe src="https://tiktok.com" allow="fullscreen"></iframe>
+                </div>
+                <div class="project-info">
+                    <h3 class="project-title">TikTok Trend Edit</h3>
+                    <p class="project-desc">Short-form engagement focus. Fast pacing, pop-up text animation, and trending sound design.</p>
+                </div>
+            </div>
+
+            <!-- FACEBOOK REEL CARD -->
+            <div class="project-card">
+                <div class="video-vertical">
+                    <!-- Replace this source URL with your Facebook embed link -->
+                    <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F10046549318697837%2F&show_text=false&width=267&t=0" width="267" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                </div>
+                <div class="project-info">
+                    <h3 class="project-title">Balanced Diet Gym Reel</h3>
+                    <p class="project-desc">Fitness promo reel optimization featuring localized captions and dynamic transitions.</p>
+                </div>
+            </div>
+
+        </div>
+
     </main>
 
     <footer>
